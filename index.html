@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="converter">
+        <h5>Length Converter</h5>
+        <label>Enter value:</label>
+        <input type="number" id="InputValue" placeholder="Enter value">
+        <label >From:</label>
+        <Select id="fromSubUnit">
+            <option value="meters">Meters</option>
+            <option value="centimeters">Centimeters</option>
+            <option value="kilometers">Kilometers</option>
+            <option value="inches">Inches</option>
+            <option value="miles">Miles</option>
+        </Select>
+        <label>To:</label>
+        <select id="toSubUnit">
+            <option value="meters">Meters</option>
+            <option value="centimeters">Centimeters</option>
+            <option value="kilometers">Kilometers</option>
+            <option value="inches">Inches</option>
+            <option value="miles">Miles</option>
+        </select>
+        <button onclick="convert()" id="converting">Convert</button>
+        <h5 id="result"></h5>
+    </div>
+    <script>
+    function convert(){
+        const InputValue= parseFloat(document.getElementById('InputValue').value);
+        const fromSubUnit= document.getElementById('fromSubUnit').value;
+        const toSubUnit = document.getElementById('toSubUnit').value;
+       
+       
+
+        const conversionRates={
+            meters: 1,
+            centimeters: 100,
+            kilometers:0.001,
+            inches: 39.3700787,
+            miles:0.00062137
+        }
+        if(isNaN(InputValue)){
+            document.getElementById('result').innerHTML="Please enter a valid number";
+            return;
+        }
+        
+            
+        const valueInMeters=InputValue/conversionRates[fromSubUnit];
+        const  actualValue=valueInMeters*conversionRates[toSubUnit];
+        document.getElementById('result').innerHTML=` ${InputValue} ${fromSubUnit} is equal to ${actualValue} ${toSubUnit}`;    
+       
+
+
+    }
+    </script>
+</body>
+</html>

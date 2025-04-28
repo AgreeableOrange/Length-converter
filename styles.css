@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: grey;
+    font-family: Roboto, arial, sans-serif;
+}
+h5{
+    margin: 0;
+    margin-bottom: 4px;
+}
+.converter{
+    padding: 20px;
+    display: grid;
+    font-size:1.3rem;
+    width: 300px;
+    border:1px solid #424242;
+    background-color: rgb(212, 212, 212);
+    line-break: rem;
+    border-radius: 7px;
+}
+
+.converter input{
+    width: auto;
+    padding: 10px 6px;
+    font-size: 1rem;
+    border:1px solid #ccc;
+    font-family: Roboto, arial, sans-serif;
+    margin: 4px 0;
+}
+.converter select{
+    padding: 10px 6px;
+    font-size: 1rem;
+    border:1px solid #ccc;
+    cursor: pointer;
+    font-family: Roboto, arial, sans-serif;
+    margin: 4px 0;
+
+}
+
+.converter button{
+    color: white;
+    padding: 10px 6px;
+    font-size: 1rem;
+    border:1px solid #ccc;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    font-family: Roboto, arial, sans-serif;
+    background-color: rgba(5, 185, 185, 0.897);
+}
+#result{
+    font-family: Roboto, arial, sans-serif;
+    margin: 0;
+    margin-top: .5rem;
+}
